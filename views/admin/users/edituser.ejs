@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+    <!--The content below is only a placeholder and can be replaced.-->
+
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/css/basic.css">
+
+    <%- include("../component/header.ejs")%>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <%- include("../component/aside.ejs")%>
+
+                </div>
+                <div class="col-sm-10">
+                    <ol class="breadcrumb">
+                        <li class="active">用户管理
+                        </li>
+                        <li class="active">修改用户信息
+                        </li>
+                    </ol>
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            修改用户信息
+                        </div>
+                        <div class="panel-body">
+                            <div class="table-responsive input-form">
+                                <form action="/admin/doedlituser?id=<%=editData._id%>" method="post">
+                                    <ul>
+                                        <li> 姓名: <input type="text" value="<%=editData.username%>" name="username" /></li>
+                                        <!-- <li> 密码: <input type="password" name="password" /></li> -->
+                                        <li> 年龄: <input type="text" value="<%=editData.age%>" name="age" /></li>
+                                        <li> 性别: <input type="text" value="<%=editData.sex%>" name="sex" /></li>
+
+                                        <li>
+                                            地址:
+                                            <textarea name="address" id="" cols="60" rows="8"><%=editData.address%></textarea>
+                                        </li>
+
+                                        <li>
+                                            <br />
+                                            <button type="submit" class="btn btn-default">提交</button>
+                                        </li>
+
+                                    </ul>
+
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
